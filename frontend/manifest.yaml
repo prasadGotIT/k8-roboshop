@@ -7,21 +7,21 @@ metadata:
   labels:
     project: roboshop
     component: frontend
-    tier: backend
+    tier: fronend
 spec:
   replicas: 1
   selector:
     matchLabels:
      project: roboshop
      component: frontend
-     tier: backend
+     tier: fronend
       
   template:
     metadata:
       labels:
         project: roboshop
         component: frontend
-        tier: backend
+        tier: fronend
     spec:
       containers:
       - name: frontend
@@ -49,10 +49,11 @@ metadata:
   name: frontend
   namespace: roboshop
 spec:
+  type: LoadBalancer
   selector:
     project: roboshop
     component: frontend
-    tier: backend
+    tier: fronend
   ports:
     - protocol: TCP
       port: 80
