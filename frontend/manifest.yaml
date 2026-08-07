@@ -78,21 +78,21 @@ metadata:
   labels:
     project: roboshop
     component: frontend
-    tier: fronend
+    tier: frontend
 spec:
   replicas: 1
   selector:
     matchLabels:
      project: roboshop
      component: frontend
-     tier: fronend
+     tier: frontend
       
   template:
     metadata:
       labels:
         project: roboshop
         component: frontend
-        tier: fronend
+        tier: frontend
     spec:
       containers:
       - name: frontend
@@ -119,8 +119,8 @@ spec:
           subPath: nginx.conf
       volumes:
       - name: nginx-config
-          configMap:
-            name: fronend
+        configMap:
+          name: frontend
 ---
 apiVersion: v1
 kind: Service
@@ -132,7 +132,7 @@ spec:
   selector:
     project: roboshop
     component: frontend
-    tier: fronend
+    tier: frontend
   ports:
     - protocol: TCP
       port: 80  #service port
